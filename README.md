@@ -20,7 +20,7 @@ IAP_CLIENT_ID=xxx
 sed -i -e "s/{ID_TOKEN_AUDIENCE}/$IAP_CLIENT_ID/" frontend/app.yaml
 
 gcloud --project=$PROJECT_ID app deploy frontend/
-gcloud --project=$PROJECT_ID app deploy backend-iap/
+gcloud --project=$PROJECT_ID app deploy backend/
 ```
 
 2. Set IAP Policy
