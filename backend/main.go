@@ -85,7 +85,7 @@ func main() {
 		}
 
 		fmt.Printf("%#v\n", token)
-		fmt.Fprintf(w, "Request authorized\n")
+		fmt.Fprintf(w, "Request by: %s\n", claims.Email)
 	})
 
 	port := os.Getenv("PORT")

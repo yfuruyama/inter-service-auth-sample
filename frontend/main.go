@@ -26,7 +26,8 @@ func main() {
 		}
 
 		// Get ID Token
-		idToken, err := metadata.Get("instance/service-accounts/default/identity?audience=http://www.example.com")
+		audience := os.Getenv("ID_TOKEN_AUDIENCE")
+		idToken, err := metadata.Get("instance/service-accounts/default/identity?audience=" + audience)
 		if err != nil {
 			write500(w, err)
 			return
@@ -55,7 +56,7 @@ func main() {
 			return
 		}
 
-		fmt.Fprintf(w, "Response from backend: %s", string(b))
+		fmt.Fprintf(w, "Response from backend:\n  %s", string(b))
 	})
 
 	port := os.Getenv("PORT")

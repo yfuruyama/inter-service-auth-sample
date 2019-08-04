@@ -1,2 +1,4 @@
 runtime: go112
 service: inter-service-auth-frontend
+env_variables:
+  ID_TOKEN_AUDIENCE: {ID_TOKEN_AUDIENCE}
